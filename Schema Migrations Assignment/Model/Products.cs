@@ -12,12 +12,14 @@ namespace Schema_Migrations_Assignment2.Model
         public int ProductID { get; set; }
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; } 
+        public int CategoryID { get; set; }
 
-        public Products(int productID, string productName, decimal productPrice)
+        public Products(int productID, string productName, decimal productPrice, int categoryID)
         {
             ProductID = productID;
             ProductName = productName;
             ProductPrice = productPrice;
+            CategoryID = categoryID;
         }
     }
 }
