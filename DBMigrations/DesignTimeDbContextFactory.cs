@@ -6,7 +6,10 @@ namespace DBMigrations
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DBContext>
     {
-        private string ConnectionString = "DESKTOP-VAUPBM7";
+
+        //Change this to the name of the local database you have, it requires the database to be created already
+        private string ConnectionString = "JESPER-PC";
+
         public DBContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<DBContext>();
