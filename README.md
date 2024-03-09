@@ -1,3 +1,12 @@
+Instructions for setting up the project:
+Create a Database, as the script don't include creation of the database, merely the initial table creation.
+
+Documentation for the executing the manual migrations.
+The manual migrations can be executes in any order wanted
+Merely run the SQL scripts as querries on your desired database and the tables, constaints and column additions will be created.
+
+
+
 For rollbacks the following scripts would work for each stage:
 The order fo the following script do matter, in the sense that the constraints need to be dropped before the columns and tables can be dropped
 
