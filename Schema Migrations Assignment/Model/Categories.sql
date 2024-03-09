@@ -6,8 +6,8 @@ CREATE TABLE categories (
 
 --Migration 1 of Products table
 --03/03/2024 V2 
-ALTER TABLE products
+ALTER TABLE Products
 ADD category_id INT;
 
-ALTER TABLE products
-ADD FOREIGN KEY (category_id) REFERENCES categories(id);
+ALTER TABLE Products
+ADD CONSTRAINT FK_Products_Category FOREIGN KEY (category_id) REFERENCES categories(id);
