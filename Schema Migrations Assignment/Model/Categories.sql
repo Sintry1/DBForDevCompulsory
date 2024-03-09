@@ -10,4 +10,4 @@ ALTER TABLE Products
 ADD category_id INT;
 
 ALTER TABLE Products
-ADD CONSTRAINT FK_Products_Category FOREIGN KEY (category_id) REFERENCES categories(id);
+ADD CONSTRAINT FK_Products_Category_id FOREIGN KEY (category_id) REFERENCES categories(id);
