@@ -3,6 +3,7 @@ using DBMigrations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DBMigrations.Migrations
 {
     [DbContext(typeof(DBContext))]
-    partial class DBContextModelSnapshot : ModelSnapshot
+    [Migration("20240309113445_AddCategoriesTableAndForeignKey")]
+    partial class AddCategoriesTableAndForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,27 +60,11 @@ namespace DBMigrations.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("Rating_Id")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("Rating_Id");
 
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("DBMigrations.Models.Products", b =>
-                {
-                    b.HasOne("DBMigrations.Models.ProductRatings", "ProductRatings")
-                        .WithMany()
-                        .HasForeignKey("Rating_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ProductRatings");
                 });
 
             modelBuilder.Entity("DBMigrations.Models.Products", b =>
